@@ -49,11 +49,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # 5. EKS kubeconfig 업데이트
-      # 클러스터에 kubectl 명령어 실행을 위한 자격증명을 가져와야 한다.
-      - name: Update Kubeconfig
-        run: |
-          aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER_NAME }} --region ${{ secrets.AWS_REGION || 'ap-northeast-2' }}
+      # # 5. EKS kubeconfig 업데이트
+      # # 클러스터에 kubectl 명령어 실행을 위한 자격증명을 가져와야 한다.
+      # - name: Update Kubeconfig
+      #   run: |
+      #     aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER_NAME }} --region ${{ secrets.AWS_REGION || 'ap-northeast-2' }}
 
       # 6. EKS Deployment 이미지 업데이트
       - name: Deploy to EKS
